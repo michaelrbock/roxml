@@ -104,7 +104,7 @@ in this case.
 
 === Namespace Support
 
-Namespaced nodes are supported via the xml_namespace and xml_namespaces declarations and the :from and :namespace attr options.  See spec/xml/namespace_spec.rb for usage.
+Namespaced nodes are supported via the `xml_namespace` and `xml_namespaces` declarations and the `:from` and `:namespace` attr options.  See `spec/xml/namespace_spec.rb` for usage.
 
 Note that ROXML does not currently support outputting namespaced nodes.  This is planned for a future version.
 
@@ -123,14 +123,14 @@ The result of the block above is stored, rather than the actual value parsed fro
 
 == Construction
 
-Object life-cycle is as follows: .from_xml is called with a first argument representing the xml
-in file, string, or path form, and with optional initialization_args following.
+Object life-cycle is as follows: `.from_xml` is called with a first argument representing the xml
+in file, string, or path form, and with optional `initialization_args` following.
 
-Firt .new and thus #initialize, is called with those same initialization_args, or no args if none
+First `.new` and thus `#initialize`, is called with those same `initialization_args`, or no args if none
 are present.  Then the object is populated with the attribute values from xml.  Then the
-#after_parse callback is called, with no arguments.
+`#after_parse` callback is called with no arguments.
 
-In #after_parse you can ensure that your object initialization is complete, including initialization which
+In `#after_parse` you can ensure that your object initialization is complete, including initialization which
 requires more than one variable in concert.
 
 E.g.:
@@ -157,7 +157,7 @@ E.g.:
   end
 
 One important use of this approach is to make ROXML object which may or may not include an xml backing,
-which may be used via _new_ construction as well as _from_xml_ construction.
+which may be used via `new` construction as well as `from_xml` construction.
 
 == Selecting a parser
 
